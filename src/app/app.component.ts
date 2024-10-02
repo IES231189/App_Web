@@ -7,6 +7,7 @@ import { ChangeDetectorRef } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+ private title ='Pos'
   constructor(private cdr: ChangeDetectorRef) {}
 
   ngAfterViewChecked() {

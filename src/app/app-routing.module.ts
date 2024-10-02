@@ -6,7 +6,7 @@ import { OfertsProductListComponent } from './features/oferts-product/oferts-pro
 
 
 const routes: Routes = [
-  { path: 'products', component: ProductListComponent },
+  { path: 'products', component: ProductListComponent},
   { path: 'offers', component: OfertsListComponent },
   { path: 'offer-products', component: OfertsProductListComponent },
   { path: '', redirectTo: '/products', pathMatch: 'full' },
