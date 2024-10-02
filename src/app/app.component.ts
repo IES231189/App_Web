@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'ManageProducts';
+  constructor(private cdr: ChangeDetectorRef) {}
+
+  ngAfterViewChecked() {
+    this.cdr.detectChanges();
+  }
 }
