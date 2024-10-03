@@ -13,13 +13,15 @@ export class TableComponent {
  @Output() editItem = new EventEmitter<any>();
  @Output() deleteItem = new EventEmitter<number>();
 
+
+
  edit(item:any){
   this.editItem.emit(item);
  }
 
  delete(id:number){
   this.deleteItem.emit(id);
- }
 
+ }
 
 }

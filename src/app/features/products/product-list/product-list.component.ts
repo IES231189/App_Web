@@ -10,41 +10,54 @@ declare var window: any;
   styleUrl: './product-list.component.css'
 })
 
-export class ProductListComponent implements OnInit{
+export class ProductListComponent implements OnInit {
   products: Product[] = [];
 
+  selectedProduct: Product | null = null ;
+
   columns = [
-    {field:'id' , header: 'ID'},
-    {field:'name' , header:'Nombre'},
-    {field:'price' , header:'Precio'},
-    {field:'description' , header:'description'},
-    {field:'quantify' , header:'Cantidad'}
+    { field: 'id', header: 'ID' },
+    { field: 'name', header: 'Nombre' },
+    { field: 'price', header: 'Precio' },
+    { field: 'description', header: 'description' },
+    { field: 'quantify', header: 'Cantidad' }
   ];
 
-  constructor(private productService: ProductService){}
+  constructor(private productService: ProductService) { }
 
-  modal:any;
+
+  modal: any;
 
   ngOnInit(): void {
-      this.products = this.productService.getProducts();
-      this.modal = new window.bootstrap.Modal(document.getElementById('productModal'))
+    this.products = this.productService.getProducts();
+    console.log(this.products)
+    this.modal = new window.bootstrap.Modal(document.getElementById('productModal'))
   }
 
-  openModal(){
+  loadProducts(): void {
+    this.products = this.productService.getProducts();
+  }
+
+
+  openModal() {
     this.modal.show();
   }
 
-  onDeleteProduct(productId : number):void{
+  closeModal(): void {
+    this.modal.hide();
+  }
+
+
+  onDeleteProduct(productId: number): void {
     this.productService.deleteProduct(productId);
     this.productService.getProducts();
   }
 
-  onEditProduct(productId : number):void{
 
+  onEditProduct(product:Product): void {
+    this.openModal()
+    this.selectedProduct= { ...product };
   }
 
-  Add(){
-
-  }
 
 }

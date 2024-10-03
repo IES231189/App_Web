@@ -1,1 +1,20 @@
-<p>form-product works!</p>
+<form (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <label for="name" class="form-label">Nombre</label>
+    <input id="name" [(ngModel)]="product.name" name="name" class="form-control" required>
+  </div>
+  <div class="mb-3">
+    <label for="price" class="form-label">Precio</label>
+    <input id="price" [(ngModel)]="product.price" name="price" type="number" class="form-control" required>
+  </div>
+  <div class="mb-3">
+    <label for="description" class="form-label">Descripción</label>
+    <textarea id="description" [(ngModel)]="product.description" name="description" class="form-control" required></textarea>
+  </div>
+  <div class="mb-3">
+    <label for="quantify" class="form-label">Cantidad</label>
+    <input id="quantify" [(ngModel)]="product.quantify" name="quantify" type="number" class="form-control" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Guardar</button>
+  <button type="button" class="btn btn-secondary" (click)="resetForm()">Limpiar</button>
+</form>

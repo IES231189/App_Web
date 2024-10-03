@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormProductComponent } from './form-product/form-product.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { CoreModule } from '../../core/core.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -10,7 +11,11 @@ import { CoreModule } from '../../core/core.module';
   declarations:[FormProductComponent , ProductListComponent],
   imports: [
     CommonModule,
-    CoreModule
+    CoreModule,
+    FormsModule,
+  ] , exports:[
+     FormProductComponent,
+     ProductListComponent
   ]
 })
 export class ProductsModule { }
