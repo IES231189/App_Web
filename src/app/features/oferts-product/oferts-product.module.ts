@@ -11,7 +11,8 @@ import { OfertsProductFormComponent } from './oferts-product-form/oferts-product
     OfertsProductFormComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+
   ]
 })
 export class OfertsProductModule { }
