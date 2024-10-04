@@ -1,1 +1,25 @@
-<p>oferts-form works!</p>
+<form (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <label for="title" class="form-label">Title:</label>
+    <input type="text" id="title" [(ngModel)]="oferts.title" name="title"  class="form-control" required />
+  </div>
+
+  <div class="mb-3">
+    <label for="discount" class="form-label">Discount:</label>
+    <input type="number" id="discount" [(ngModel)]="oferts.discount" name="discount"  class="form-control" required />
+  </div>
+
+  <div class="mb-3">
+    <label for="description" class="form-label">Description:</label>
+    <textarea id="description" [(ngModel)]="oferts.description" name="description"  class="form-control" required></textarea>
+  </div>
+
+  <div class="mb-3">
+    <label for="expirationDate" class="form-label">Expiration Date:</label>
+    <input type="date" id="expirationDate" [(ngModel)]="oferts.expirationDate" name="expirationDate"  class="form-control" required />
+  </div>
+
+  <button type="submit" class="btn btn-primary">Guardar</button>
+  <button type="button" class="btn btn-secondary" (click)="resetForm()">Limpiar</button>
+
+</form>

@@ -50,7 +50,7 @@ export class ProductListComponent implements OnInit {
 
   onDeleteProduct(productId: number): void {
     this.productService.deleteProduct(productId);
-    this.productService.getProducts();
+    this.products = this.productService.getProducts();
   }
 
 

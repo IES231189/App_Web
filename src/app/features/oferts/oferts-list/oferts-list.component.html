@@ -1,1 +1,30 @@
-<p>oferts-list works!</p>
+<div class="container-offers">
+
+  <img src="../../../../assets/logo.png" width="170px" class="img-logo">
+
+  <button class="show-form" (click)="openModal()">Agregar Oferta</button>
+
+  <app-table
+    [data]="offers"
+    [columns]="columns"
+    (editItem)="onEditOffer($event)"
+    (deleteItem)="onDeleteOffer($event)">
+  </app-table>
+</div>
+
+<div class="modal fade" id="ofertsModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Formulario</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" *ngIf="selectedOffer">
+        <app-oferts-form [oferts]="selectedOffer" (offerUpdated)="loadOffers()"></app-oferts-form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
