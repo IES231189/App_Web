@@ -4,6 +4,7 @@ import { OfertsFormComponent } from './oferts-form/oferts-form.component';
 import { OfertsListComponent } from './oferts-list/oferts-list.component';
 import { CoreModule } from '../../core/core.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProductsModule } from "../products/products.module";
 
 
 
@@ -13,7 +14,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
-    CoreModule
-  ]
+    CoreModule,
+    ProductsModule
+]
 })
 export class OfertsModule { }
